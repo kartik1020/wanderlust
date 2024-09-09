@@ -89,7 +89,21 @@ _I'd love for you to make the most of this project - it's all about learning, he
 2. **Install Dependencies**
 
    ```bash
-   npm i
+   # installs fnm (Fast Node Manager)
+winget install Schniz.fnm
+
+# configure fnm environment
+fnm env --use-on-cd | Out-String | Invoke-Expression
+
+# download and install Node.js
+fnm use --install-if-missing 20
+
+# verifies the right Node.js version is in the environment
+node -v # should print `v20.17.0`
+
+# verifies the right npm version is in the environment
+npm -v # should print `10.8.2`
+    npm i
    ```
 
 3. **Configure Environment Variables**
